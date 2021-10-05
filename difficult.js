@@ -1,28 +1,47 @@
-let num = 266219;
-let a;
-let sum = 1;
-console.log(num);
+'use strict';
 
-while (num > 0) {
-    sum = sum * (num % 10);
+// let lang = prompt("На каком языке укажите ru или en");
+// if (lang == "ru") {
+//     lang = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+//     for (let i = 0; i < lang.length; i++) {
+//         console.log(lang[i]);
+
+//     }
+// } else if (lang == "en") {
+//     lang = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+//     for (let i = 0; i < lang.length; i++) {
+//         console.log(lang[i]);
+
+//     }
+// }
+
+// switch (lang) {
+//     case "ru":
+//         lang = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+//         for (let i = 0; i < lang.length; i++) {
+//             console.log(lang[i]);
+//         }
+//         break
+//     case "en":
+//         lang = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+//         for (let i = 0; i < lang.length; i++) {
+//             console.log(lang[i]);
+//         }
+//         break
+
+// }
+// let arr1 = {
+//     en: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+// };
+// let arr2 = {
+//     ru: ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+
+// };
+// lang == "ru" ? console.log(arr2) : console.log(arr1);
 
 
-    num = Math.floor(num / 10);
+let namePerson = prompt("Ввести Артем или Александр");
 
-}
-
-sum = sum ** 3;
-
-while (sum > 0) {
-    sum = Math.floor(sum / 10);
-    if (sum == 21) {
-        console.log(sum + " " + "первые две цифры");
-        a = sum % 10;
-        console.log(a + " " + "вторая цифра");
-        sum = Math.floor(sum / 10);
-        sum = sum;
-        console.log(sum + " " + "первая цифра");
-    }
-
-
-}
+namePerson == "Артем" ? console.log("директор") :
+    namePerson == "Александр" ? console.log("преподаватель") :
+    console.log("студент");
