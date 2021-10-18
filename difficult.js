@@ -1,28 +1,29 @@
 'use strict';
 
-// Задание номер 1 усложненное
+let week = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
+let date = new Date();
+let weekday = date.getDay();
+let options = {
+    weekday: 'long'
+};
+let ourday = new Intl.DateTimeFormat('ru-RU', options).format(date);
 
-const isNumber = function (num) {
-    while (num === null) {
-        return 0;
+
+
+const result = week.find(function (item, index, week) {
+    if (ourday == item) {
+        return index;
     }
-    while (!isNaN(parseFloat(num)) && isFinite(num)) {
-        return Number(num);
+})
+
+for (let i = 0; i < week.length; i++) {
+
+    if (result == week[i]) {
+        document.writeln(week[i].bold() + "<br>");
+        continue;
+    } else if (week[i] == "суббота" || week[i] == "воскресенье" && week[i] != result) {
+        document.writeln(week[i].italics() + "<br>");
+        continue;
     }
+    document.writeln(week[i] + "<br>");
 }
-
-let sum = prompt("Напишите сюда числовое значение!");
-
-const asking = function () {
-    while (!isNumber(sum)) {
-        if (isNumber(sum) === 0) {
-            break;
-        }
-
-        sum = prompt("Напишите сюда числовое значение!");
-    }
-}
-asking();
-
-let number = isNumber(sum);
-console.log(number);
